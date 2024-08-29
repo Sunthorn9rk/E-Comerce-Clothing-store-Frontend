@@ -22,7 +22,7 @@ function ProductCard() {
                 VERTICAL STRIPED SHIRT
               </h5>
             </a>
-            <div class="flex items-center mt-2.5 mb-5">
+            <div class="flex items-center my-1">
               <div class="flex items-center space-x-1 rtl:space-x-reverse">
                 <FaStar className="text-yellow-300" />
                 <FaStar className="text-yellow-300" />
@@ -31,16 +31,14 @@ function ProductCard() {
                 <FaStar className="text-yellow-300" />
                 {/* <FaStar className="text-gray-200" /> */}
               </div>
-              <span class=" ms-5 mt-1">5/5</span>
+              <span class=" ms-3">5/5</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-2xl font-bold text-gray-900 dark:text-white">
-                $212
-              </span>
-              <span class="text-2xl font-bold line-through text-black/40 dark:text-white">
+              <span class="text-2xl font-bold text-gray-900 ">$212</span>
+              <span class="text-2xl font-bold line-through text-black/40 ">
                 $232
               </span>
-              <p className="text-sm font-medium text-red-500 border-2 p-2 rounded-full bg-gray-100">
+              <p className="text-sm font-medium text-red-500  p-1 rounded-full bg-gray-100">
                 -{getDiscountPricePercentage(232, 212)}%
               </p>
             </div>
