@@ -34,7 +34,7 @@ export default function Home() {
         TOP SELLING
       </h1>
       {/* products grid start */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10 max-w-[1280px] mx-auto p-20 lg:p-0 border-2 border-red-500">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10 max-w-[1280px] mx-auto p-20 lg:p-0 ">
         {/* {data?.map((data) => (
           <ProductCard key={data.id} data={data} />
         ))} */}
