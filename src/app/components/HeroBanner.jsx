@@ -3,8 +3,8 @@ import React from "react";
 
 function HeroBanner() {
   return (
-    <section className="sm:flex-row md:flex w-full bg-[#F2F0F1]">
-      <div className="flex-1 content-center max-w-[600px] mx-auto space-y-4 pt-10 md:mr-1 text-center md:p-6 md:text-left">
+    <section className="sm:flex-row md:flex-row lg:flex w-full bg-[#F2F0F1]">
+      <div className="flex-1 content-center max-w-[600px] mx-auto space-y-4 pt-10  text-center md:max-w-full xl:mr-1 xl:px-32 xl:text-left">
         <h1 className="text-5xl font-black space-y-2">
           <span className="block">FIND CLOTHES</span>
           <span className="block">THAT MATCHES</span>
@@ -46,7 +46,7 @@ function HeroBanner() {
           </div>
         </div>
       </div>
-      <div className="flex-initial">
+      <div className="flex-initial max-w-[700px] mx-auto">
         <img
           src="/HeroBanner.png"
           alt="Hero-Banner"
