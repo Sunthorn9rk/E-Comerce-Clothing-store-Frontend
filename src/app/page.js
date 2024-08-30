@@ -4,6 +4,7 @@ import HeroBanner from "./components/HeroBanner";
 import BrandBanner from "./components/BrandBanner";
 import ProductCard from "./components/ProductCard";
 import Category from "./components/Category";
+import Testimonial from "./components/Testimonial";
 
 export default function Home() {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
       </div>
       {/* products grid end */}
       <Category />
+      <Testimonial />
     </main>
   );
 }
