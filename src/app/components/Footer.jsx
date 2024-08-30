@@ -3,11 +3,30 @@ import {FaFacebookF} from "react-icons/fa";
 import {FaXTwitter} from "react-icons/fa6";
 import {FaInstagram} from "react-icons/fa";
 import {FaGithub} from "react-icons/fa";
+import {GoMail} from "react-icons/go";
 
 function Footer() {
   return (
-    <footer class="bg-white w-full">
-      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer class="bg-black/10 w-full relative pt-28 mt-28 ">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6  lg:py-8">
+        <div className="mx-auto w-full max-w-screen-xl md:flex md:justify-between p-12 bg-black rounded-3xl absolute top-[-115px] ">
+          <div className="text-white text-5xl font-black w-3/5 flex items-center justify-center">
+            STAY UPTO DATE ABOUT OUR LATEST OFFERS
+          </div>
+          <div className="w-2/6 space-y-4">
+            <div className="bg-white p-4 rounded-3xl text-base flex gap-2 text-black/40">
+              <GoMail className="size-6" />
+              Enter your email address
+            </div>
+            <div>
+              <a href="#">
+                <div className="bg-white p-4 rounded-3xl text-base text-center">
+                  Subscribe to Newsletter
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="md:flex md:justify-between mb-12">
           <div class="mb-6 md:mb-0">
             {/* LOGO */}
@@ -158,7 +177,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <hr class="my-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+        <hr class="my-2 border-gray-300 sm:mx-auto" />
         <div class="sm:flex sm:items-center sm:justify-between">
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             SHOP.CO © 2000-2024, All Rights Reserved.
