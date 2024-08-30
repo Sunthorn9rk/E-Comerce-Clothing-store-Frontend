@@ -7,13 +7,13 @@ import {GoMail} from "react-icons/go";
 
 function Footer() {
   return (
-    <footer class="bg-black/10 w-full relative pt-28 mt-28 ">
-      <div class="mx-auto w-full max-w-screen-xl p-4 py-6  lg:py-8">
-        <div className="mx-auto w-full max-w-screen-xl md:flex md:justify-between p-12 bg-black rounded-3xl absolute top-[-115px] ">
-          <div className="text-white text-5xl font-black w-3/5 flex items-center justify-center">
+    <footer class="bg-black/10 w-full relative pt-52 mt-52 md:pt-36 md:mt-36 lg:pt-28 lg:mt-28 ">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6  lg:py-8 ">
+        <div className="mx-auto max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl md:flex md:justify-between p-12 bg-black rounded-3xl absolute top-[-220px] mr-2 md:top-[-150px] md:mr-5 lg:top-[-115px] lg:mr-1">
+          <div className="text-white text-5xl font-black w-full xl:w-3/5 flex items-center justify-center">
             STAY UPTO DATE ABOUT OUR LATEST OFFERS
           </div>
-          <div className="w-2/6 space-y-4">
+          <div className="w-full xl:w-2/6 space-y-4 pt-10 md:pt-0">
             <div className="bg-white p-4 rounded-3xl text-base flex gap-2 text-black/40">
               <GoMail className="size-6" />
               Enter your email address
