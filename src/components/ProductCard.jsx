@@ -1,6 +1,6 @@
 import React from "react";
 import {FaStar} from "react-icons/fa";
-import {getDiscountPricePercentage} from "../../../utils/helper";
+import {getDiscountPricePercentage} from "../../utils/helper";
 
 function ProductCard() {
   return (

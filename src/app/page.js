@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import HeroBanner from "./components/HeroBanner";
-import BrandBanner from "./components/BrandBanner";
-import ProductCard from "./components/ProductCard";
-import Category from "./components/Category";
-import Testimonial from "./components/Testimonial";
+import HeroBanner from "../components/HeroBanner";
+import BrandBanner from "../components/BrandBanner";
+import ProductCard from "../components/ProductCard";
+import Category from "../components/Category";
+import Testimonial from "../components/Testimonial";
 
 export default function Home() {
   return (
