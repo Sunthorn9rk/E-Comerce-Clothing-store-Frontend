@@ -4,6 +4,9 @@ import React, {useEffect, useState} from "react";
 import {getDiscountPricePercentage} from "../../../../utils/helper";
 
 import {IoMdHeartEmpty} from "react-icons/io";
+import Wrapper from "@/components/Wrapper";
+import {FaStar} from "react-icons/fa";
+import AboutProduct from "@/components/AboutProduct";
 
 function page() {
   const [product, setProduct] = useState([]);
@@ -34,155 +37,172 @@ function page() {
     });
   };
 
+  // function amount item button
+  // สร้าง state เพื่อเก็บค่าจำนวนสินค้า
+  const [quantity, setQuantity] = useState(1);
+
+  // ฟังก์ชันเพิ่มจำนวน
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  // ฟังก์ชันลดจำนวน
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
   return (
     <div className="w-full md:py-20">
-      <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
-        {/* left column start */}
-        <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
-          <ProductDetailsCarousel />
-        </div>
-        {/* left column end */}
-
-        {/* right column start */}
-        <div className="flex-[1] py-3">
-          {/* PRODUCT TITLE */}
-          <div className="text-[34px] font-semibold mb-2 leading-tight">
-            Shirt
+      <Wrapper>
+        <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
+          {/* left column start */}
+          <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
+            <ProductDetailsCarousel images="/image1.png" />
           </div>
+          {/* left column end */}
 
-          {/* PRODUCT SUBTITLE */}
-          <div className="text-lg font-semibold mb-5">it just a Shirt</div>
-
-          {/* PRODUCT PRICE */}
-          <div className="flex items-center text-black/[0.5]">
-            <p className="mr-2 text-lg font-semibold">$500</p>
-            {700 && (
-              <>
-                <p className="text-base font-medium line-through">${700}</p>
-                <p className="ml-auto text-base font-medium text-green-500">
-                  {getDiscountPricePercentage(700, 500)}% off
-                </p>
-              </>
-            )}
-          </div>
-
-          <div className="text-md font-medium text-black/[0.5]">
-            incl. of taxes
-          </div>
-          <div className=" text-md font-medium text-black/[0.5] mb-20">
-            {`(Also includes all applicable duties)`}
-          </div>
-
-          {/* PRODUCT SIZE RANGE START */}
-          <div className="mb-10">
-            {/* HEADING START */}
-            <div className="flex justify-between mb-2">
-              <div className="text-md font-medium">Select Size</div>
-              <div className="text-md font-medium text-black/[0.5] cursor-pointer">
-                Select Guide
-              </div>
+          {/* right column start */}
+          <div className="flex-[1] py-3">
+            {/* PRODUCT TITLE */}
+            <div className="text-[34px] font-semibold mb-2 leading-tight">
+              Shirt
             </div>
-            {/* HEADING END */}
 
-            {/* SIZE START */}
-            <div id="sizesGrid" className="grid grid-cols-3 gap-2">
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 6
+            {/* PRODUCT SUBTITLE */}
+            <div class="flex items-center my-1">
+              <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                <FaStar className="text-yellow-300" />
+                <FaStar className="text-yellow-300" />
+                <FaStar className="text-yellow-300" />
+                <FaStar className="text-yellow-300" />
+                <FaStar className="text-yellow-300" />
+                {/* <FaStar className="text-gray-200" /> */}
               </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 6.6
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 7
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 7.5
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 8
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 8.5
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 9
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 9.5
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 10
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
-                UK 10.5
-              </div>
-              <div className="border rounded-md text-center py-3 font-medium cursor-not-allowed bg-black/[0.1] opacity-50">
-                UK 11
-              </div>
+              <span class=" ms-3">5/5</span>
             </div>
-            {/* SIZE END */}
 
-            {/* SHOW ERROR START */}
-            {showError && (
-              <div className="text-red-600 mt-1">
-                Size selection is required
+            {/* PRODUCT PRICE */}
+            <div className="flex items-center text-black/[0.5]">
+              <p className="mr-2 text-lg font-semibold">$500</p>
+              {700 && (
+                <>
+                  <p className="text-base font-medium line-through">${700}</p>
+                  <p className="ml-auto text-base font-medium text-green-500">
+                    {getDiscountPricePercentage(700, 500)}% off
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div className="text-md font-medium text-black/[0.5] my-2">
+              This Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officiis
+            </div>
+
+            <hr />
+
+            {/* PRODUCT SIZE RANGE START */}
+            <div className="mb-10 my-2">
+              {/* Colors START */}
+              <div className="my-4">
+                <div className="mt-6">
+                  <div className="text-md font-medium">Select Colors</div>
+                </div>
+                <div className="flex gap-4 my-2">
+                  <div className="bg-red-500 rounded-full w-10 h-10 cursor-pointer"></div>
+                  <div className="bg-green-500 rounded-full w-10 h-10 cursor-pointer"></div>
+                  <div className="bg-blue-500 rounded-full w-10 h-10 cursor-pointer"></div>
+                </div>
               </div>
-            )}
-            {/* SHOW ERROR END */}
+              {/* Colors END */}
+
+              <hr />
+              {/* Size START */}
+              <div className="my-4">
+                <div className="mt-6">
+                  <div className="text-md font-medium">Select Size</div>
+                </div>
+                <div className="flex gap-4 my-2">
+                  <div className="bg-gray-200 rounded-full w-auto h-auto cursor-pointer py-4 px-6">
+                    Small
+                  </div>
+                  <div className="bg-gray-200 rounded-full w-auto h-auto cursor-pointer py-4 px-6">
+                    Medium
+                  </div>
+                  <div className="bg-gray-200 rounded-full w-auto h-auto cursor-pointer py-4 px-6">
+                    Large
+                  </div>
+                  <div className="bg-gray-200 rounded-full w-auto h-auto cursor-pointer py-4 px-6">
+                    X-Large
+                  </div>
+                </div>
+              </div>
+              {/* Size END */}
+
+              {/* SHOW ERROR START */}
+              {showError && (
+                <div className="text-red-600 mt-1">
+                  Size selection is required
+                </div>
+              )}
+              {/* SHOW ERROR END */}
+            </div>
+            {/* PRODUCT SIZE RANGE END */}
+            {/* START BUTTON AMOUNT PRODUCT */}
+            {/* ////////////////////////// */}
+            <div className="flex gap-4">
+              <div className="w-1/3 py-4 rounded-full bg-gray-200 text-lg font-medium transition-transform active:scale-95 mb-3 flex justify-between gap-8 px-6">
+                <button className="w-full text-3xl" onClick={decreaseQuantity}>
+                  -
+                </button>
+                <input
+                  className="bg-gray-200 w-6 text-center"
+                  type="text"
+                  value={quantity}
+                  readOnly
+                />
+                <button className="w-full text-3xl" onClick={increaseQuantity}>
+                  +
+                </button>
+              </div>
+
+              {/* END BUTTON AMOUNT PRODUCT */}
+
+              {/* ADD TO CART BUTTON START */}
+              <button
+                className="w-2/3 py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
+                onClick={() => {
+                  if (!selectedSize) {
+                    setShowError(true);
+                    document.getElementById("sizesGrid").scrollIntoView({
+                      block: "center",
+                      behavior: "smooth",
+                    });
+                  } else {
+                    dispatch(
+                      addToCart({
+                        ...product?.data?.[0],
+                        selectedSize,
+                        oneQuantityPrice: p.price,
+                      })
+                    );
+                    notify();
+                  }
+                }}
+              >
+                Add to Cart
+              </button>
+              {/* ADD TO CART BUTTON END */}
+            </div>
           </div>
-          {/* PRODUCT SIZE RANGE END */}
-
-          {/* ADD TO CART BUTTON START */}
-          <button
-            className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
-            onClick={() => {
-              if (!selectedSize) {
-                setShowError(true);
-                document.getElementById("sizesGrid").scrollIntoView({
-                  block: "center",
-                  behavior: "smooth",
-                });
-              } else {
-                dispatch(
-                  addToCart({
-                    ...product?.data?.[0],
-                    selectedSize,
-                    oneQuantityPrice: p.price,
-                  })
-                );
-                notify();
-              }
-            }}
-          >
-            Add to Cart
-          </button>
-          {/* ADD TO CART BUTTON END */}
-
-          {/* WHISHLIST BUTTON START */}
-          <button className="w-full py-4 rounded-full border border-black text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10">
-            Whishlist
-            <IoMdHeartEmpty size={20} />
-          </button>
-          {/* WHISHLIST BUTTON END */}
-
-          {/* DETAIL PRODUCT START */}
-          <div>
-            <div className="text-lg font-bold mb-5">Product Details</div>
-
-            {/* <div className="markdown text-md mb-5">
-                Feel unbeatable from the tee box to the final putt in a design
-                is pure early MJ: speed, class and laden with true early '90s
-                touches like visible Air and a translucent rubber sole that
-                continue to stand the test of time. This model fuses the strut
-                of 1st MJ’s championship with some of our best golf technology,
-                helping you make a statement of confidence when it comes time to
-                tame the course.
-              </div> */}
-          </div>
-          {/* DETAIL PRODUCT END */}
+          {/* right column end */}
         </div>
-        {/* right column end */}
-      </div>
+        {/* DETAIL PRODUCT START */}
+        <AboutProduct />
+        {/* DETAIL PRODUCT END */}
+      </Wrapper>
     </div>
   );
 }

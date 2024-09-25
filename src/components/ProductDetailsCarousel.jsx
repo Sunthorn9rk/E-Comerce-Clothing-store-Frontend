@@ -12,10 +12,9 @@ const ProductDetailsCarousel = ({images}) => {
         infiniteLoop={true}
         showIndicators={false}
         showStatus={false}
-        thumbWidth={60}
+        thumbWidth={200}
         className="productCarousel"
       >
-        <img src="../products/image_1.png" />
         <img src="../products/image_1.png" />
         <img src="../products/image_1.png" />
         <img src="../products/image_1.png" />
